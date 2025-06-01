@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teruntuk Kuni Salsabila Ahmad</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fddde6;
+      background-image: radial-gradient(#f8bfcf 1px, transparent 1px);
+      background-size: 20px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 16px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      position: relative;
+    }
+    .main-photo {
+      width: 100%;
+      border-radius: 10px;
+      position: relative;
+    }
+    .tape {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 20px;
+      background: pink;
+      background-image: linear-gradient(45deg, #e1708d 25%, transparent 25%, transparent 50%, #e1708d 50%, #e1708d 75%, transparent 75%);
+      background-size: 10px 10px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .circle-photo {
+      position: absolute;
+      right: 10px;
+      bottom: -30px;
+      border: 5px solid #fddde6;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .circle-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .title {
+      font-size: 24px;
+      color: #811d18;
+      font-weight: bold;
+      margin-top: 60px;
+    }
+    .message {
+      font-size: 16px;
+      color: #333;
+      margin: 15px 0;
+      line-height: 1.6;
+    }
+    .stats-card {
+      background: #000;
+      color: white;
+      text-align: left;
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 20px;
+      font-family: monospace;
+    }
+    .stats-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+    .footer {
+      font-size: 10px;
+      color: #555;
+      margin-top: 10px;
+    }
+    .flower {
+      position: absolute;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/346/346167.png');
+      background-size: cover;
+      animation: fall linear infinite;
+      z-index: 1;
+      opacity: 0.8;
+    }
+	
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      .circle-photo {
+        width: 60px;
+        height: 60px;
+        right: 5px;
+        bottom: -25px;
+      }
+      .title {
+        font-size: 20px;
+      }
+      .message {
+        font-size: 15px;
+      }
+      .stats-card {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+<audio autoplay="autoplay">
+     <source src="audio/audio.mp3" />     
+ </audio>
+  <div class="card">
+    <div class="tape"></div>
+    <img src="gambar/gambar1.jpg" class="main-photo" alt="Main Photo">
+    <div class="circle-photo">
+      <img src="gambar/gambar2.jpg" alt="Profile">
+    </div>
+    <div class="title">Selamat Sayangku!</div>
+    <div class="message">
+      <p>Kamu telah berhasil menyelesaikan tantangan 10.000 langkah dariku</br>
+      Aku bangga banget sama kamu, walaupun penuh dengan sambat tapi kamu tetap berusaha menyelesaikannya
+      Terus semangat ya sayangku supaya kita bisa tetap sehat sampai tua nanti</p>
+	  <h4><b>I Love You 😘 </b></h4>
+    </div>
+    <div class="footer">Dibuat dengan cinta, Mas Jawa♥</div>
+  </div>
+
+
+  <script>
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.style.left = Math.random() * window.innerWidth + 'px';
+      flower.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 5000);
+    }
+    setInterval(createFlower, 300);
+  </script>
+</body>
+</html>
